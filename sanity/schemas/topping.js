@@ -6,6 +6,9 @@ export default {
   title: 'Toppings',
   type: 'document',
   icon,
+  initialValue: {
+    vegetarian: false
+  },
   fields: [
     {
       name: 'name',
@@ -20,7 +23,7 @@ export default {
       description: 'Is that topping vegetarian?',
       options: {
         layout: 'checkbox'
-      }
+      },
     },
   ],
   preview: {
