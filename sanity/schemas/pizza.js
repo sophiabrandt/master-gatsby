@@ -1,4 +1,5 @@
 import { MdLocalPizza as icon } from 'react-icons/md'
+import PriceInput from '../components/PriceInput'
 
 // helper function
 function createArrayfromSelectedKeys(obj, fn) {
@@ -44,6 +45,7 @@ export default {
       type: 'number',
       description: 'Pizza price in cents',
       validation: (Rule) => Rule.required().min(1000).max(50000),
+      inputComponent: PriceInput,
     },
     {
       name: 'toppings',
