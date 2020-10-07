@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
@@ -52,17 +52,9 @@ function countPizzasInToppings(pizzas) {
 
 export default function ToppingsFilter() {
   const {
-    toppings: { nodes: toppings },
     pizzas: { nodes: pizzas },
   } = useStaticQuery(graphql`
     query {
-      toppings: allSanityTopping {
-        nodes {
-          name
-          id
-          vegetarian
-        }
-      }
       pizzas: allSanityPizza {
         nodes {
           toppings {
