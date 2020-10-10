@@ -7,18 +7,21 @@ export default function PizzasPage({
   data: {
     pizzas: { nodes: pizzas },
   },
+  pageContext,
 }) {
   return (
     <>
-      <ToppingsFilter />
+      <ToppingsFilter activeTopping={pageContext.topping} />
       <PizzaList pizzas={pizzas} />
     </>
   )
 }
 
 export const query = graphql`
-  query {
-    pizzas: allSanityPizza {
+  query PizzaQuery($toppingRegex: String) {
+    pizzas: allSanityPizza(
+      filter: { toppings: { elemMatch: { name: { regex: $toppingRegex } } } }
+    ) {
       nodes {
         id
         name
