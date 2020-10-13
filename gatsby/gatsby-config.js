@@ -1,8 +1,6 @@
 import dotenv from 'dotenv'
 
-dotenv.config({ path: './env' })
-
-console.log(process.env.SANITY_TOKEN)
+dotenv.config({ path: '.env' })
 
 export default {
   siteMetadata: {
