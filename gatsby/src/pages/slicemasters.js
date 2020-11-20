@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Pagination from '../components/Pagination'
+import SEO from '../components/SEO'
 
 const SlicemasterGrid = styled.div`
   display: grid;
@@ -42,6 +43,7 @@ export default function SliceMastersPage({
 }) {
   return (
     <>
+      <SEO title={`Slicemasters - Page ${pageContext.currentPage || 1}`} />
       <Pagination
         pageSize={Number(process.env.GATSBY_PAGE_SIZE)}
         totalCount={slicemasters.totalCount}
