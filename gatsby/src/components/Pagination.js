@@ -26,7 +26,6 @@ const PaginationGrid = styled.div`
   }
 `
 
-
 export default function Pagination({
   pageSize,
   totalCount,
@@ -46,7 +45,13 @@ export default function Pagination({
         🢀 Prev
       </Link>
       {Array.from({ length: totalPages }).map((_, i) => (
-        <Link className={currentPage === 1 && i === 0 ? 'current' : ''} to={`${base}/${i+1}`}>{i + 1}</Link>
+        <Link
+          key={`page${i}`}
+          className={currentPage === 1 && i === 0 ? 'current' : ''}
+          to={`${base}/${i + 1}`}
+        >
+          {i + 1}
+        </Link>
       ))}
       <Link disabled={!hasNextPage} to={`${base}/${nextPage}`}>
         Next 🢚

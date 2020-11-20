@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import React from 'react'
 import { graphql } from 'gatsby'
 
@@ -32,25 +32,25 @@ export default function BeersPage({
       <h2 className="center">
         We have {beers.length} beers available. Dine in only!
       </h2>
-    <BeerGridStyle>
-      {beers.map((beer) => {
-        const rating = Math.round(beer.rating.average)
-        return (
-          <SingleBeerStyle key={beer.id}>
-            <img src={beer.image} alt={beer.name} />
-            <h3>{beer.name}</h3>
-            {beer.price}
-            <p title={`${rating} out of 5 stars`}>
-              {`⭐`.repeat(rating)}
-              <span style={{ filter: `grayScale(100%)` }}>
-                {`⭐`.repeat(5 - rating)}
-              </span>
-              <span>({beer.rating.reviews})</span>
-            </p>
-          </SingleBeerStyle>
-        )
-      })}
-    </BeerGridStyle>
+      <BeerGridStyle>
+        {beers.map((beer) => {
+          const rating = Math.round(beer.rating.average)
+          return (
+            <SingleBeerStyle key={beer.id}>
+              <img src={beer.image} alt={beer.name} />
+              <h3>{beer.name}</h3>
+              {beer.price}
+              <p title={`${rating} out of 5 stars`}>
+                {`⭐`.repeat(rating)}
+                <span style={{ filter: `grayScale(100%)` }}>
+                  {`⭐`.repeat(5 - rating)}
+                </span>
+                <span>({beer.rating.reviews})</span>
+              </p>
+            </SingleBeerStyle>
+          )
+        })}
+      </BeerGridStyle>
     </>
   )
 }

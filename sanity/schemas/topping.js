@@ -7,7 +7,7 @@ export default {
   type: 'document',
   icon,
   initialValue: {
-    vegetarian: false
+    vegetarian: false,
   },
   fields: [
     {
@@ -22,15 +22,17 @@ export default {
       type: 'boolean',
       description: 'Is that topping vegetarian?',
       options: {
-        layout: 'checkbox'
+        layout: 'checkbox',
       },
     },
   ],
   preview: {
     select: {
       name: 'name',
-      vegetarian: 'vegetarian'
+      vegetarian: 'vegetarian',
     },
-    prepare: ({name, vegetarian}) => ({title: `${name} ${vegetarian ? ' 🥬' : ''}`})
-  }
+    prepare: ({ name, vegetarian }) => ({
+      title: `${name} ${vegetarian ? ' 🥬' : ''}`,
+    }),
+  },
 }
